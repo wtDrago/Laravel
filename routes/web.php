@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PartyController;
+use App\Http\Controllers\TeamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+// Route::get('party_index', 'UserController@index');
+
+
+// Route::get('/party_index', function () {
+//     return view('party_index');
+// });
+Route::get('/team/index', [TeamController::class, 'index']);
+Route::get('/party/index', [PartyController::class, 'index']);
+Route::get('/insight/index', [PartyController::class, 'index']);
+Route::get('/challege/index', [PartyController::class, 'index']);
+Route::get('/reward/index', [PartyController::class, 'index']);
